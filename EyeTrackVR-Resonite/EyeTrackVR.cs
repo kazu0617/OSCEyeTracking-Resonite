@@ -1,21 +1,21 @@
 ﻿using HarmonyLib;
-using NeosModLoader;
+using ResoniteModLoader;
 using FrooxEngine;
-using BaseX;
+using Elements.Core;
 using System;
 
 namespace EyeTrackVR
 {
-    public class EyeTrackVR : NeosMod
+    public class EyeTrackVR : ResoniteMod
     {
-        public override string Name => "EyeTrackVR-Neos";
+        public override string Name => "EyeTrackVR-Resonite";
         public override string Author => "dfgHiatus + PLYSHKA";
         public override string Version => "1.0.1";
-        public override string Link => "https://github.com/dfgHiatus/EyeTrackVR-Neos";
+        public override string Link => "https://github.com/dfgHiatus/EyeTrackVR-Resonite";
         public override void OnEngineInit()
         {
             Config = GetConfiguration();
-            new Harmony("net.dfgHiatus.plyshka.EyeTrackVR-Neos").PatchAll();
+            new Harmony("net.dfgHiatus.plyshka.EyeTrackVR-Resonite").PatchAll();
             Engine.Current.OnShutdown += () => ETVR.Teardown();
         }
         private static ETVROSC ETVR;
